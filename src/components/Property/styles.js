@@ -6,6 +6,8 @@ export const Container = styled.div`
   border-radius: 8px;
   overflow: hidden;
 
+  background-color: ${({ isSelected }) => (isSelected ? '#f5f5f5' : '#fff')};
+
   img {
     width: 100%;
   }

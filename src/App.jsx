@@ -1,17 +1,14 @@
 import { useState } from 'react';
+import Booking from './components/Booking';
 import Properties from './components/Properties';
 
 const App = () => {
   const [bookings, setBookings] = useState([]);
-  const [selectedProperty, setSelectedProperty] = useState(null);
-
-  const handleClickProperty = (property) => {
-    setSelectedProperty(property);
-  };
 
   return (
     <div>
-      <Properties onClickProperty={handleClickProperty} />
+      <Properties />
+      <Booking />
     </div>
   );
 };

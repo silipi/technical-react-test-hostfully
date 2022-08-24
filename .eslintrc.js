@@ -19,6 +19,7 @@ module.exports = {
     'no-unused-vars': 'warn',
     'arrow-body-style': 'off',
     'react/prop-types': 'off',
+    'no-param-reassign': 'off',
     'import/prefer-default-export': 'off',
     'react/function-component-definition': [
       2,

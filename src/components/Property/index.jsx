@@ -1,8 +1,13 @@
+import { useSelector } from 'react-redux';
 import { Container } from './styles';
 
 const Property = ({ property, onClick }) => {
+  const isSelected = useSelector(
+    (state) => state.property.selectedProperty?.id === property.id
+  );
+
   return (
-    <Container>
+    <Container isSelected={isSelected}>
       <img src={property.image} alt={property.title} />
       <div className="body">
         <div className="text">
