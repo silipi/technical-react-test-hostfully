@@ -22,9 +22,14 @@ export const bookingSlice = createSlice({
 
       state.bookings = newBookings;
     },
+    remove: (state, action) => {
+      const newBookings = state.bookings.filter((b) => b.id !== action.payload);
+
+      state.bookings = newBookings;
+    },
   },
 });
 
-export const { create, update } = bookingSlice.actions;
+export const { create, update, remove } = bookingSlice.actions;
 
 export default bookingSlice.reducer;

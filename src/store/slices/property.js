@@ -7,7 +7,7 @@ const initialState = {
       title: 'Beach House',
       description: 'Lorem ipsum dolor sit.',
       image:
-        'https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-1.2.1&dl=vu-anh-TiVPTYCG_3E-unsplash.jpg&w=640&q=80&fm=jpg&crop=entropy&cs=tinysrgb',
+        'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&dl=r-architecture-2gDwlIim3Uw-unsplash.jpg&w=640&q=80&fm=jpg&crop=entropy&cs=tinysrgb',
       price: 200,
     },
     {

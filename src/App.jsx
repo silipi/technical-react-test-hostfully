@@ -1,14 +1,13 @@
-import { useState } from 'react';
-import Booking from './components/Booking';
+import CreateBooking from './components/CreateBooking';
+import ListBookings from './components/ListBookings';
 import Properties from './components/Properties';
 
 const App = () => {
-  const [bookings, setBookings] = useState([]);
-
   return (
     <div>
       <Properties />
-      <Booking />
+      <CreateBooking />
+      <ListBookings />
     </div>
   );
 };
