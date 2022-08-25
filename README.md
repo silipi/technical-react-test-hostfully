@@ -2,6 +2,13 @@
 
 The technical test was develop using React and Redux Toolkit, along with JavaScript and Styled Components.
 
+## Images: 
+
+![image](https://user-images.githubusercontent.com/50153753/186550012-25182b14-4abf-4f48-b1f0-875437048f2e.png)
+![image](https://user-images.githubusercontent.com/50153753/186550025-5553b123-30b2-43e2-9720-24f409053aab.png)
+![image](https://user-images.githubusercontent.com/50153753/186550031-5a7e30f3-bd6b-436b-a582-29ac7495794a.png)
+
+
 ## Decisions:
 
 - **JavaScript**: As the test asked for ES6, I decided to use Create React App with only JavaScript instead of TypeScript. But I can develop using TypeScript if is suited for the project (I also prefer to use it).
