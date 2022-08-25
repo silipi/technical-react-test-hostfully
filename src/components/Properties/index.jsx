@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setSelectedProperty } from '../../store/slices/property';
-import Property from '../Property';
+import Property from './Property';
 import { Carrousel, Container } from './styles';
 
 const Properties = () => {

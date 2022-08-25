@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { create } from '../../store/slices/booking';
 import { checkBookingDates } from '../../utils';
-import Button from '../Button';
-import Input from '../Input';
+import Button from '../common/Button';
+import Input from '../common/Input';
 import { Container } from './styles';
 import { setSelectedProperty } from '../../store/slices/property';
 

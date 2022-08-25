@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import Booking from '../Booking';
+import Booking from './Booking';
 import { Container } from './styles';
 
 const ListBookings = () => {

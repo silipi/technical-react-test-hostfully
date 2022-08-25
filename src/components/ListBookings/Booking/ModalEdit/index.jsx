@@ -3,13 +3,13 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
-import { checkBookingDates } from '../../../utils';
+import { checkBookingDates } from '../../../../utils';
 import { Container, OuterContainer } from './styles';
-import { update } from '../../../store/slices/booking';
-import Button from '../../Button';
-import Input from '../../Input';
+import { update } from '../../../../store/slices/booking';
+import Button from '../../../common/Button';
+import Input from '../../../common/Input';
 
-const BookingEditModal = ({ onClose, booking }) => {
+const ModalEdit = ({ onClose, booking }) => {
   const bookings = useSelector((state) => state.booking.bookings);
   const properties = useSelector((state) => state.property.properties);
 
@@ -123,4 +123,4 @@ const BookingEditModal = ({ onClose, booking }) => {
   );
 };
 
-export default BookingEditModal;
+export default ModalEdit;

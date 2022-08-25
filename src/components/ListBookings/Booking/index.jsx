@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { format } from 'date-fns';
 import { useDispatch } from 'react-redux';
-import { remove } from '../../store/slices/booking';
-import BookingEditModal from './BookingEditModal';
+import { remove } from '../../../store/slices/booking';
+import ModalEdit from './ModalEdit';
 import { Container } from './styles';
-import Button from '../Button';
+import Button from '../../common/Button';
 
 const Booking = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
@@ -43,7 +43,7 @@ const Booking = ({ data }) => {
       </div>
 
       {showModal && (
-        <BookingEditModal
+        <ModalEdit
           isOpen={showModal}
           onClose={() => setShowModal(false)}
           booking={data}
