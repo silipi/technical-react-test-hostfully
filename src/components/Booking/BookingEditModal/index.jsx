@@ -1,7 +1,6 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import { useEffect, useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { checkBookingDates } from '../../../utils';
@@ -10,7 +9,7 @@ import { update } from '../../../store/slices/booking';
 import Button from '../../Button';
 import Input from '../../Input';
 
-const BookingEditModal = ({ isOpen, onClose, booking }) => {
+const BookingEditModal = ({ onClose, booking }) => {
   const bookings = useSelector((state) => state.booking.bookings);
   const properties = useSelector((state) => state.property.properties);
 
