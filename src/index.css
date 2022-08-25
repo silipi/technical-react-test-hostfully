@@ -4,6 +4,8 @@
   --color-primary--hover: #460c83;
   --color-text-primary: #212024;
   --color-text-secondary: #50505a;
+
+  --media-mobile: 640px;
 }
 
 * {
@@ -22,4 +24,8 @@ button {
   font-family: 'Inter', sans-serif;
   font-size: 16px;
   color: var(--color-text-primary);
+}
+
+.container {
+  padding: 16px;
 }

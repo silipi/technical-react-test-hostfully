@@ -4,6 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { create } from '../../store/slices/booking';
 import { checkBookingDates } from '../../utils';
+import Button from '../Button';
+import Input from '../Input';
+import { Container } from './styles';
+import { setSelectedProperty } from '../../store/slices/property';
 
 const CreateBooking = () => {
   const dispatch = useDispatch();
@@ -50,33 +54,59 @@ const CreateBooking = () => {
 
     dispatch(create(booking));
 
+    setName('');
+    setInitialDate('');
+    setFinalDate('');
+
+    dispatch(setSelectedProperty(null));
+
     return toast.success('Booking successfully created!');
   };
 
+  const handleCancel = () => {
+    dispatch(setSelectedProperty(null));
+    setName('');
+    setInitialDate('');
+    setFinalDate('');
+  };
+
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <input
-        type="text"
-        placeholder="Your name"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
-      <input
-        type="date"
-        placeholder="Initial date"
-        value={initialDate}
-        min={new Date().toISOString().split('T')[0]}
-        onChange={(e) => setInitialDate(e.target.value)}
-      />
-      <input
-        type="date"
-        placeholder="Final date"
-        value={finalDate}
-        min={initialDate || new Date().toISOString().split('T')[0]}
-        onChange={(e) => setFinalDate(e.target.value)}
-      />
-      <button type="submit">Submit</button>
-    </form>
+    <Container>
+      <h2>Fill the information needed:</h2>
+      <form onSubmit={(e) => handleSubmit(e)}>
+        <Input
+          label="Name:"
+          id="name"
+          type="text"
+          placeholder="Your name"
+          value={name}
+          onChange={setName}
+        />
+        <Input
+          label="Start date:"
+          id="initial"
+          type="date"
+          placeholder="Initial date"
+          value={initialDate}
+          min={new Date().toISOString().split('T')[0]}
+          onChange={setInitialDate}
+        />
+        <Input
+          label="End date:"
+          id="final"
+          type="date"
+          placeholder="Final date"
+          value={finalDate}
+          min={initialDate || new Date().toISOString().split('T')[0]}
+          onChange={setFinalDate}
+        />
+
+        <div className="actions">
+          <Button type="submit">Create</Button>
+          <Button onClick={handleCancel}>Cancel</Button>
+        </div>
+      </form>
+    </Container>
   );
 };
 

@@ -1,12 +1,18 @@
+import { useSelector } from 'react-redux';
+
 import CreateBooking from './components/CreateBooking';
 import ListBookings from './components/ListBookings';
 import Properties from './components/Properties';
 
 const App = () => {
+  const selectedProperty = useSelector(
+    (state) => state.property.selectedProperty
+  );
+
   return (
-    <div>
+    <div className="container">
       <Properties />
-      <CreateBooking />
+      {selectedProperty && <CreateBooking />}
       <ListBookings />
     </div>
   );

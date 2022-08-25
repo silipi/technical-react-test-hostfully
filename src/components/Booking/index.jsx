@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { format } from 'date-fns';
 import { useDispatch } from 'react-redux';
 import { remove } from '../../store/slices/booking';
-import BookingEditModal from '../BookingEditModal';
+import BookingEditModal from './BookingEditModal';
 import { Container } from './styles';
+import Button from '../Button';
 
 const Booking = ({ data }) => {
   const [showModal, setShowModal] = useState(false);
@@ -22,18 +24,24 @@ const Booking = ({ data }) => {
         style={{ backgroundImage: `url(${data.property.image})` }}
         alt={data.property.title}
       />
+
       <div className="content">
         <h3>{data.name}</h3>
-        <p>Initial: {data.initialDate}</p>
-        <p>Final: {data.finalDate}</p>
+        <div>
+          <p>Start: {format(new Date(data.initialDate), 'MM/dd/yyyy')}</p>
+          <p>End: {format(new Date(data.finalDate), 'MM/dd/yyyy')}</p>
+        </div>
       </div>
 
-      <button type="button" onClick={handleDelete}>
-        Delete
-      </button>
-      <button type="button" onClick={handleUpdate}>
-        Update
-      </button>
+      <div className="actions">
+        <Button className="update" type="button" onClick={handleUpdate}>
+          Update
+        </Button>
+        <Button className="delete" type="button" onClick={handleDelete}>
+          Delete
+        </Button>
+      </div>
+
       {showModal && (
         <BookingEditModal
           isOpen={showModal}

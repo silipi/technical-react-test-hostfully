@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   width: 300px;
@@ -6,7 +6,13 @@ export const Container = styled.div`
   border-radius: 8px;
   overflow: hidden;
 
-  background-color: ${({ isSelected }) => (isSelected ? '#f5f5f5' : '#fff')};
+  ${({ isSelected }) =>
+    isSelected &&
+    css`
+      border: 1px solid var(--color-primary);
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+      background-color: #f0f0f0;
+    `};
 
   img {
     width: 100%;
